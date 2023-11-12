@@ -161,3 +161,34 @@ const inventory = [
     sold: 8,
   },
 ];
+
+//----- OPDRACHT 1A
+const tvTypes = inventory.map((invent) => {
+  return invent.type;
+});
+console.log(tvTypes);
+
+//opdracht 1b
+const soldOutTvs = inventory.filter((invent) => {
+  if ( invent.originalStock === invent.sold){
+    return invent;
+  }
+});
+
+console.log(soldOutTvs);
+
+//opdracht 1c
+const ambiTvs = inventory.filter((invent) => {
+  if (invent.options.ambiLight) {
+    return invent;
+  }
+});
+
+console.log(ambiTvs);
+
+//opdracht 1d
+const priceDescending = inventory.sort((a, b) => {
+  return a.price - b.price;
+});
+console.log(priceDescending);
+
